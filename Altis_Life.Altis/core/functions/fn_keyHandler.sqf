@@ -262,8 +262,8 @@ switch (_code) do
     if(_alt && !_shift) then
 	{
 	SOCK_fnc_updateRequest;
-    diag_log format ["SERVEUR KOSMOS: %1 utilise ALT+F4 pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]];
-    [[1,format["SERVEUR KOSMOS: %1 utilise ALT+F4 pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+    diag_log format ["SERVEUR DoG: %1 utilise ALT+F4 pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]];
+    [[1,format["SERVEUR DoG: %1 utilise ALT+F4 pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 	SOCK_fnc_updateRequest;
     };
 };
@@ -274,8 +274,8 @@ switch (_code) do
     if(_ctrlKey && _alt)  then
     {
 	SOCK_fnc_updateRequest;
-    diag_log format ["SERVEUR KOSMOS: %1 utilise CTRL + ALT + DEL pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]];
-    [[1,format["SERVEUR KOSMOS: %1 utilise CTRL + ALT + DEL  pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+    diag_log format ["SERVEUR DoG: %1 utilise CTRL + ALT + DEL pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]];
+    [[1,format["SERVEUR DoG : %1 utilise CTRL + ALT + DEL  pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 	SOCK_fnc_updateRequest;
     };
 };
@@ -286,8 +286,8 @@ switch (_code) do
     if( _ctrlKey )  then
 	{
 	SOCK_fnc_updateRequest;
-    diag_log format ["SERVEUR KOSMOS: %1 utilise CTRL + ESC pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]];
-    [[1,format["SERVEUR KOSMOS: %1 utilise CTRL + ESC pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+    diag_log format ["SERVEUR DoG: %1 utilise CTRL + ESC pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]];
+    [[1,format["SERVEUR DoG: %1 utilise CTRL + ESC pour se déconnecter (Prenez une capture et signalez le sur le Forum)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
        SOCK_fnc_updateRequest;
 	};
 };
