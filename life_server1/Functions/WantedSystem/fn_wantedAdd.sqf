@@ -1,7 +1,7 @@
 /*
 	File: fn_wantedAdd.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Adds or appends a unit to the wanted list.
 */
@@ -15,24 +15,24 @@ if(_uid == "" OR _type == "" OR _name == "") exitWith {}; //Bad data passed.
 //What is the crime?
 switch(_type) do
 {
-	case "187V": {_type = ["Vehicular Manslaughter",6500]};
-	case "187": {_type = ["Manslaughter",8500]};
-	case "901": {_type = ["Escaping Jail",4500]};
-	case "261": {_type = ["Rape",5000]}; //What type of sick bastard would add this?
-	case "261A": {_type = ["Attempted Rape",3000]};
-	case "215": {_type = ["Attempted Auto Theft",2000]};
-	case "213": {_type = ["Use of illegal explosives",10000]};
-	case "211": {_type = ["Robbery",1000]};
+	case "187V": {_type = ["Car Kill",6500]};
+	case "187": {_type = ["Meurtre",8500]};
+	case "901": {_type = ["Echapper de la prison",10000]};
+	case "261": {_type = ["Viol",5000]}; //What type of sick bastard would add this?
+	case "261A": {_type = ["Tentative de viole",3000]};
+	case "215": {_type = ["Tentative de vol",2000]};
+	case "213": {_type = ["Utilisation d'explosif illégale",10000]};
+	case "211": {_type = ["Vol",1000]};
 	case "207": {_type = ["Kidnapping",3500]};
-	case "207A": {_type = ["Attempted Kidnapping",2000]};
-	case "487": {_type = ["Grand Theft",1500]};
-	case "488": {_type = ["Petty Theft",700]};
-	case "480": {_type = ["Hit and run",1300]};
-	case "481": {_type = ["Drug Possession",1000]};
-	case "482": {_type = ["Intent to distribute",5000]};
-	case "483": {_type = ["Drug Trafficking",9500]};
-	case "459": {_type = ["Burglary",6500]};
-    case "919": {_type = ["Organ Dealing",20000]};
+	case "207A": {_type = ["Tentive d'enlèvement",2000]};
+	case "487": {_type = ["Vol de vehicule",1500]};
+	case "488": {_type = ["Chapardage petit vol",700]};
+	case "480": {_type = ["Délit de fuite",1300]};
+	case "481": {_type = ["Possession de drogue",1000]};
+	case "482": {_type = ["Intention de distribuer",5000]};
+	case "483": {_type = ["Trafique de drogue",9500]};
+	case "459": {_type = ["Cambriolage",6500]};
+    case "919": {_type = ["Trafique d'organe",20000]};
 	default {_type = [];};
 };
 
