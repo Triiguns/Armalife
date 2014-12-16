@@ -2,13 +2,14 @@
 /*
 	File: fn_playerTags.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Adds the tags above other players heads when close and have visible range.
 */
 private["_ui","_units"];
 #define iconID 78000
 #define scale 0.8
+_headgear = ["H_Shemag_olive","H_Shemag_khk"]; // Ajout cagoule sans nom
 
 if(visibleMap OR {!alive player} OR {dialog}) exitWith {
 	500 cutText["","PLAIN"];
@@ -37,9 +38,10 @@ _units = _units - [player];
 		_distance = _pos distance player;
 		if(count _sPos > 1 && {_distance < 15}) then {
 			_text = switch (true) do {
+				case ((headgear _x) in _headgear): {format["<t color='#000000'>Masked Player</t>"];}; // Ajout cagoule sans nom
 				case (_x in (units grpPlayer) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x getVariable ["realname",name _x])];};
 				case (!isNil {(_x getVariable "rank")}): {format["<img image='%1' size='1'></img> %2",switch ((_x getVariable "rank")) do {
-					case 3: {"\a3\ui_f\data\gui\cfg\Ranks\corporal_gs.paa"}; 
+					case 3: {"\a3\ui_f\data\gui\cfg\Ranks\corporal_gs.paa"};
 					case 4: {"\a3\ui_f\data\gui\cfg\Ranks\sergeant_gs.paa"};
 					case 5: {"\a3\ui_f\data\gui\cfg\Ranks\lieutenant_gs.paa"};
 					case 6: {"\a3\ui_f\data\gui\cfg\Ranks\captain_gs.paa"};
@@ -55,7 +57,7 @@ _units = _units - [player];
 					};
 				};
 			};
-			
+
 			_idc ctrlSetStructuredText parseText _text;
 			_idc ctrlSetPosition [_sPos select 0, _sPos select 1, 0.4, 0.65];
 			_idc ctrlSetScale scale;
